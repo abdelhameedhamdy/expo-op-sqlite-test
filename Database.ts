@@ -1,4 +1,3 @@
-// import performance from 'react-native-performance';
 import { open } from "@op-engineering/op-sqlite";
 
 // import { openRemote } from "@op-engineering/op-sqlite";
