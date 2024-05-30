@@ -17,9 +17,9 @@ export async function createDB() {
 }
 
 export async function loadExtension() {
-  let largeDb = open(DB_CONFIG);
-  largeDb.loadExtension("libcrsqlite_1", "sqlite3_crsqlite_init");
-  const result = largeDb.execute(`select crsql_db_version() as crsql;`);
+  let db = open(DB_CONFIG);
+  db.loadExtension("libcrsqlite_1", "sqlite3_crsqlite_init");
+  const result = db.execute(`select crsql_db_version() as crsql;`);
   console.log(JSON.stringify(result.rows?.item(0))); // expected toBe: {"crsql":0}
 }
 
